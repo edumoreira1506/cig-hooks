@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import isJson from './utils/isJson';
+import isJson from '../utils/isJson';
 
 export default function useLocalStorage<T>(key: string) {
   const set = useCallback((newValue: T) => {
