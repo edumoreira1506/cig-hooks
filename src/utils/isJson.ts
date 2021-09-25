@@ -1,6 +1,8 @@
 export default function isJson(str: string) {
   try {
-    JSON.parse(str);
+    const parsedJson = JSON.parse(str);
+
+    return typeof parsedJson === 'object';
   } catch (e) {
     return false;
   }
