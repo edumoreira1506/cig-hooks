@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { renderHook } from '@testing-library/react-hooks';
 
 import useLocalStorage from '../../hooks/useLocalStorage';
