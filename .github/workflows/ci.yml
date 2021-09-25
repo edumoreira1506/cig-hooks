@@ -16,13 +16,13 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Installing dependencies
         run: |
-          npm i
+          npm i -g yarn && yarn
       - name: Running tests
         run: |
-          npm run test
+          yarn test
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -36,10 +36,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Installing dependencies
         run: |
-          npm i
+          npm i -g yarn && yarn
       - name: Linter
         run: |
-          npm run lint
+          yarn lint
